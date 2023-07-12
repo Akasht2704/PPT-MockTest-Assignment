@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input Box App</title>
+  <style>
+    #inputBox {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="inputBox">
+  <button id="submitButton">Submit</button>
+  <div id="output"></div>
+
+  <script>
+    const inputBox = document.getElementById("inputBox");
+    const submitButton = document.getElementById("submitButton");
+    const output = document.getElementById("output");
+
+    submitButton.addEventListener("click", function() {
+      const inputValue = inputBox.value.trim();
+
+      if (inputValue !== "") {
+        const newElement = document.createElement("p");
+        newElement.textContent = inputValue;
+        output.appendChild(newElement);
+        inputBox.value = "";
+      }
+    });
+  </script>
+</body>
+</html>
